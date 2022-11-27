@@ -1,10 +1,16 @@
-var express = require('express');
-var router = express();
-var crypto = require('crypto');
-var base64url = require('base64url');
+const express = require('express');
+const router =  express();
+const crypto = require('crypto');
+const base64url = require('base64url');
 
 router.use(express.json());
 router.use(express.urlencoded({ extended: true}));
+
+router.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3001");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 function randomStringAsBase64Url(size) {
     return base64url(crypto.randomBytes(size));
@@ -60,11 +66,5 @@ function validateTokens(body) {
     }
     return true;
 }
-
-var server = router.listen(3000, function () {
-   var host = server.address().address
-   var port = server.address().port
-   console.log("Example router listening at http://%s:%s", host, port)
-});
 
 module.exports = router;

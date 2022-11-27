@@ -4,8 +4,8 @@
   "description": "A simple tokenization service",
   "main": "index.js",
   "scripts": {
-    "start": "node src/main/server.js",
-    "test": "jest --collect-coverage --forceExit"
+    "start": "node src/main/app.js",
+    "test": "jest --collect-coverage --detectOpenHandles --forceExit"
   },
   "author": "Ivy Lin",
   "license": "ISC",

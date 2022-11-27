@@ -7,4 +7,4 @@
     curl -H "Content-Type: application/json" -X GET http://localhost:3000/accounts
 
 3. Run the test
-    stop the 'npm start' terminal, and then run 'npm test'
+    run 'npm test'
