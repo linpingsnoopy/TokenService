@@ -2,7 +2,6 @@ const loki = require('lokijs');
 const db = new loki('accounts');
 
 function tidyResult(result) {
-    //return {account: result.account, token: result.token}
     if (result === null) return null;
     else return result.token;
 }
@@ -26,7 +25,6 @@ class AccountDao {
 
         this.accounts.insert( {account: '4444-4444-4444-4444', token: 'He6zdCh1ReYxzZ9EKRawsi_O_aRykQTV'});
         this.accounts.insert( {account: '3333-3333-3333-3333', token: 'fvMymE7X0Je1IzMDgWooV5iGBPw0yoFy'});
-    //    this.accounts.insert( {account: '4444-1111-2222-3333', token: 'sdfsahartsrtstrsss'});
 
     }
 

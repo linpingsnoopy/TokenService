@@ -13,19 +13,6 @@ function randomStringAsBase64Url(size) {
 const AccountDao = require('./AccountDao');
 const dao = new AccountDao();
 
-const accountNumbers = [
-                         '4111-1111-1111-1111',
-                         '4444-3333-2222-1111',
-                         '4444-1111-2222-3333',
-                         '4444-4444-4444-4444'
-                       ];
-
-const tokens = [
-                 'fvMymE7X0Je1IzMDgWooV5iGBPw0yoFy',
-                 'L4hKuBJHxe67ENSKLVbdIH8NhFefPui2',
-                 'ZA5isc0kVUfvlxTE5m2dxIY8AG76KoP3',
-               ];
-
 router.get('/accounts', function (req, res) {
     var result = dao.list();
     console.log( result);
